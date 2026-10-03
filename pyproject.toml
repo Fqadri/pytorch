@@ -1,0 +1,26 @@
+[project]
+name = "pytorch"
+version = "0.1.0"
+description = "Hands-on PyTorch examples for neural networks, tokenization, and language-model data preparation."
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "numpy>=2.5.3",
+    "tiktoken>=0.14.0",
+    "torch>=2.14.0",
+]
+
+[[tool.uv.index]]
+url = "https://packagefeedproxy.microsoft.io/pypi/simple/"
+default = true
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "ruff>=0.16.9",
+]
+
+[tool.ruff.lint.per-file-ignores]
+# Preserve the existing numbered lesson filenames.
+"nn_module/_5_2layerMLPexample.py" = ["N999"]
+"nn_module/_6_2LayerMLPMultiClassificationTraining.py" = ["N999"]
